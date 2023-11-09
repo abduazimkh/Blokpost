@@ -1,0 +1,26 @@
+.hero{
+    min-height: 500px;
+    background-color: var(--p-bg-color);
+    display: flex;
+}
+
+.hero__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 20px;
+    height: 100%;
+    .hero__content{
+        h2{
+            font-size: 80px;
+            font-family: var(--source-pro);
+            font-weight: 500;
+        }
+
+        p{
+            margin: 20px 0;
+            line-height: 25px;
+            font-size: 24px;
+        }
+    }
+}

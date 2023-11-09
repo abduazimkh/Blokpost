@@ -1,7 +1,6 @@
+import './index.scss';
 import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
-import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
 const App = lazy(()=> import('./App'))
 
@@ -13,5 +12,3 @@ root.render(
     </Suspense>
     </BrowserRouter>
 );
-
-reportWebVitals();

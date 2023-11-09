@@ -1,0 +1,38 @@
+// BUTTON
+.btn {
+    background-color: #000;
+    color: #fff !important;
+    border-radius: 30px;
+    border: none;
+    font-size: 20px;
+    padding: 12px 24px;
+    white-space: nowrap;
+}
+
+.btn[type="small"] {
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.btn[type="medium"] {
+    padding: 12px 24px;
+    font-size: 20px;
+}
+
+.btn[type="large"] {
+    padding: 16px 34px;
+    font-size: 22px;
+}
+
+// CONTAINER
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+}

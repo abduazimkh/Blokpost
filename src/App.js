@@ -1,12 +1,15 @@
-import './scss/App.scss'
-import Navbar from './layout/navbar/Navbar';
-import RouteController from './routes';
+import './scss/App.scss';
+import Nav from './layout/nav/Nav';
+import Routes from './routes';
+ import { ToastContainer } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <RouteController/>
+      <Nav/>
+      <Routes/>
+      <ToastContainer position="top-center" theme="colored" limit={2}/>
     </>
   );
 }

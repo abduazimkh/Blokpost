@@ -1,4 +1,5 @@
-import axios from 'axios'
+import axios from "axios";
+
 const instance = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
@@ -10,4 +11,21 @@ const instance = axios.create({
     },
     timeout: 10000
 })
-export default instance
+
+instance.interceptors.response.use(
+    (response) => {
+        if(response) return response
+    },
+
+    (error) => {
+        if(error.response?.status === 401 || error.response?.status === 403){
+            localStorage.removeItem("token")
+            localStorage.removeItem("user_id")
+            localStorage.removeItem("is_loggedin")
+        }
+        return Promise.reject(error)
+    }
+)
+
+
+export default instance;

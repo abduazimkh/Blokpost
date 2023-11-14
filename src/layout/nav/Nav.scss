@@ -1,0 +1,28 @@
+.nav{
+    background-color: var(--p-bg-color);
+    border-bottom: 1px solid var(--p-bg-dark);
+}
+
+.nav__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .nav__seo-title{
+        visibility: hidden;
+        width: 1px !important;
+        height: 1px !important;
+    }
+
+    .nav__list{
+        display: flex;
+        gap: 0 20px;
+        padding: 30px 0;
+
+        .nav__link{
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--p-text-dark);
+        }
+    }
+}

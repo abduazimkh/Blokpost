@@ -1,0 +1,23 @@
+.admin-container{
+  display: flex;
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  &__header{
+    padding: 20px 0;
+    font-size: 40px;
+    font-family: var(--source-pro);
+    border-bottom: 1px solid var(--p-bg-dark);
+  }
+
+}
+
+.content{
+  padding: 20px 0;
+  flex: 1;
+}

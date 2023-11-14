@@ -1,10 +1,9 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React from 'react';
 
 const Admin = () => {
   return (
-    <div>Admin
-      <Outlet/>
+    <div> 
+      Admin
     </div>
   )
 }

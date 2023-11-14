@@ -5,13 +5,15 @@
     background-color: var(--p-bg-color);
     height: 100vh;
 }
-.auth__container{
+
+.auth-container{
     width: 100%;
     max-width: 400px;
-    height: 500px;
+    min-height: 380px;
     background-color: var(--p-bg-light);
     border-radius: 10px;
 }
+
 .auth__nav-list{
     display: flex;
     align-items: center;
@@ -19,18 +21,21 @@
     .auth__nav-item{
         flex: 1;
         text-align: center;
+
         .auth__nav-link{
             display: block;
             padding: 20px 0;
             text-decoration: none;
             border-bottom: 3px solid transparent;
             color: var(--p-text-dark);
+
             &--active{
                 border-bottom: 3px solid var(--p-bg-dark);
             }
         }
     }
 }
+
 .auth-form{
     display: flex;
     flex-direction: column;
@@ -41,5 +46,15 @@
         border: 1px solid gray;
         border-radius: 5px;
         text-indent: 10px;
+        font-size: 18px;
+    }
+
+    button{
+        padding: 16px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
     }
 }

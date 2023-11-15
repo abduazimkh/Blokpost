@@ -32,5 +32,16 @@ const CardSkeleton = ({ amount }) => {
   ));
 };
 
+const SingleCardSkeleton = ({ amount }) => {
+  return new Array(amount).fill("").map((skeleton, index) => (
+    <div className="single-article" key={index}>
+      <Skeleton height={25} style={{ marginTop: "10px" }} />
+      <Skeleton height={400}/>
+      <Skeleton count={3} style={{ marginTop: "10px" }} />
+      <Skeleton count={3} style={{ marginTop: "10px" }} />
+      <Skeleton height={40} style={{marginTop: "22px"}} />
+    </div>
+  ));
+};
 
-export { Button, Container, CardSkeleton }
+export { Button, Container, CardSkeleton, SingleCardSkeleton }

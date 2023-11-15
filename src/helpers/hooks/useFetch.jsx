@@ -16,10 +16,10 @@ const useFetch = (URL) => {
           }
         })
           .then(response => {
-            if(response.data.data._id){
+            if(response.data){
                 setData(response.data);
                 setLoading(false);
-                setMessage("Successfully got the user!")
+                setMessage("Successfully got the data!")
             }
             else{
                 throw new Error("Something went wrong") 

@@ -8,7 +8,7 @@ const AdminContainer = () => {
       <Sidebar/>
       <div className="admin-container__content">
         <header className="admin-container__header">
-          <h1>Cerate</h1>
+          <h1>Create</h1>
         </header>
         <div className="content">
           <Outlet/>

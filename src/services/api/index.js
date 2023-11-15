@@ -12,6 +12,19 @@ const instance = axios.create({
     timeout: 10000
 })
 
+
+instance.interceptors.request.use(
+    (request) => {
+        const token = localStorage.getItem("token")
+        request.headers["Authorization"] = "Bearer " + token
+        return request
+    },
+
+    (error) => {
+        return Promise.reject(error)
+    }
+)
+
 instance.interceptors.response.use(
     (response) => {
         if(response) return response

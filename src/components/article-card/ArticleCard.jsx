@@ -8,7 +8,7 @@ const ArticleCard = ({ id, image, title, description, author, createdAt, categor
     <div  className='article-card'>
       <div className='article__card-image'>
         <Link to={`/article/${id}`}>
-          <img src={image} alt="" />
+          <img src={image ? image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSneJHp1-rNCNwaaiGE_U76o3pn8u9EN6NuqRQrSsUlkkA4WKFzuoLgMf1OrjibOsFfDsU&usqp=CAU" } alt="" />
         </Link>
       </div>
       <h3>{truncate(title, 35, "...")}</h3>

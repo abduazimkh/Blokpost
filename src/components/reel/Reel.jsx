@@ -30,6 +30,7 @@ const Reel = () => {
           {!loading ? (
             data.map((article) => (
               <ArticleCard
+                key={article._id}
                 id={article._id}
                 image={article.image}
                 title={article.title}

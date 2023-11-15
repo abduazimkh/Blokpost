@@ -1,11 +1,16 @@
-.create__form{
+.create{
+  flex: 1;
+  display: flex;
+}
+
+.create-form{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  input, select,  button{
-    border-radius: 5px;
+  flex: 1;
+  input, select, button{
+      border-radius: 5px;
   }
-
 }
 
 .form__input{
@@ -18,7 +23,32 @@
   background-color: transparent;
 }
 
+.quill{
+  border: 2px solid var(--p-bg-color);
+  flex: 1;
+  max-height: 470px;
+  border-radius: 5px;
+}
+
 .ql-container.ql-snow{
-  height: 500px;
   font-size: 20px;
+  border: none;
+}
+
+.ql-toolbar.ql-snow{
+  border: none;
+  border-bottom: 2px solid var(--p-bg-color);
+  background-color: var(--p-bg-color);
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-label{
+  background-color: #000;
+}
+
+.ql-container{
+  height: calc(100% - 42px);
+}
+
+.ql-editor{
+  word-break: break-all;
 }

@@ -26,5 +26,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: scale(.97);
+        transition: .2s;
+    }
+    img:hover{
+        transform: scale(1);
     }
 }

@@ -1,6 +1,9 @@
 import "./index.scss";
 import Skeleton from "react-loading-skeleton";
 
+const Loading = () => {
+  return <div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+}
 
 const Button = ({text,icon, loading, click, type, disabled}) => {
   return (
@@ -44,4 +47,4 @@ const SingleCardSkeleton = ({ amount }) => {
   ));
 };
 
-export { Button, Container, CardSkeleton, SingleCardSkeleton }
+export { Loading, Button, Container, CardSkeleton, SingleCardSkeleton }

@@ -6,6 +6,7 @@ import { Button, Container, SingleCardSkeleton } from "../../utils";
 import "./Article.scss";
 import { useValue } from "../../context/AppProvider";
 import { all } from "axios";
+import parse from 'html-react-parser'
 
 const Article = () => {
   const [state] = useValue();
@@ -67,9 +68,9 @@ const Article = () => {
         <div className="single-article">
           <h2>{data.title}</h2>
           <img src={data.image} alt="picture" />
-          <p>{data.title}</p>
+          <p>{parse(data.title)}</p>
 
-          <p>{data.description}</p>
+          <p>{parse(data.description)}</p>
         </div>
       ) : (
         <SingleCardSkeleton amount={1} />
@@ -85,20 +86,20 @@ const Article = () => {
           <Button text="Comment" />
         </div>
       </form>
-
       {
-        allcomments.length > 0 && 
+        allcomments.length > 0 &&
         <div className="article__comments">
           {
-            allcomments.filter(comment => comment.post === id).reverse().map(comment => (
-              <div className="article__comment-item" key={comment._id}>
-                <div className="article__comment-user">
-                  {/* <h2>{userdata.firstname?.slice(0, 1)}</h2> */}
+            allcomments.filter((comment) => comment.post === id).reverse().map((comment) => (
+              <div key={comment._id} className="article__comment-item">
+                <div className="article__comment-user comment-user">
+                  {userdata && <h2>{userdata.firstname?.slice(0, 1)}</h2>}
                 </div>
-                  <p>{comment.description}</p>
+                <p>{comment.description}</p>
               </div>
             ))
           }
+
         </div>
       }
     </Container>

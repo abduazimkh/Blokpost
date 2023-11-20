@@ -16,8 +16,3 @@ root.render(
     </Suspense>
   </BrowserRouter>
 );
-
-// TODO ROUTER DOM
-// TODO AXIOS
-// TODO FOLDER STRUCTURE
-// TODO ROOT

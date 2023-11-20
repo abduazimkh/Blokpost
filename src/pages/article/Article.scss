@@ -61,25 +61,28 @@
 
 .article__comment-item{
   display: flex;
-  box-shadow: 0 0 5px rgb(195, 195, 195);
-  padding: 20px;
-  margin: 10px;
-  border-radius: 5px;
   align-items: center;
   gap: 30px;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(195, 195, 195);
+  word-break: break-word;
 }
 
 .article__comment-user{
-  width: 80px;
+  min-width: 80px;
   height: 80px;
-  background-color: var(--p-bg-color);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--p-bg-color);
+  border-radius: 50%;
   font-size: 40px;
   border: 2px solid var(--p-bg-dark);
   font-family: var(--source-pro);
   text-transform: uppercase;
-
+  text-shadow: 5px 0px 5px #414040;
+  color: #fff;
+  font-weight: 600;
 }

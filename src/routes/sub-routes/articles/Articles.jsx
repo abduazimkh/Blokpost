@@ -2,7 +2,7 @@ import "./Articles.scss"
 import { useEffect, useRef, useState } from "react"
 import instance from "../../../services/api"
 import parse from 'html-react-parser'
-import { Button, Loading } from "../../../utils"
+import { Button, CardSkeleton, Loading } from "../../../utils"
 import { useFetch } from "../../../helpers/hooks/useFetch"
 import { useValue } from "../../../context/AppProvider"
 import ReactQuill from "react-quill";
@@ -85,7 +85,7 @@ const Articles = () => {
       <div className='all__articles-wrapper'>
         <h2 className="articles-subtitle">All Articles</h2>
         <div className="all__posts-container">
-          {loading ? <Loading/> :
+          {loading ? <CardSkeleton amount={8} /> :
             articlesPost.filter(date => date.author === state.auth.user_id).map(article =>
               <div key={article._id} className="articles-card">
                 <h2>{parse(article.title.slice(0, 28))}...</h2>

@@ -3,8 +3,9 @@
   grid-template-columns: 1fr;
   padding: 100px 0;
   img{
-    width: 100%;
+    width: 1200px;
     aspect-ratio: 1/.6;
+    object-fit: contain;
   }
 
   h2{
@@ -15,6 +16,7 @@
 
   p{
     font-family: var(--source-pro);
+    word-break: break-all;
   }
 
   p:nth-child(3){
@@ -68,6 +70,11 @@
   border-radius: 5px;
   box-shadow: 0 0 5px rgb(195, 195, 195);
   word-break: break-word;
+  position: relative;
+  p{
+    max-width: 800px;
+  }
+
 }
 
 .article__comment-user{
@@ -85,4 +92,20 @@
   text-shadow: 5px 0px 5px #414040;
   color: #fff;
   font-weight: 600;
+}
+
+
+.btns{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-10%, -50%);
+  button{
+    padding: 8px 26px;
+    background-color: transparent;
+
+  }
 }

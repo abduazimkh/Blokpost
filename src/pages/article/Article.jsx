@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import instance from "../../services/api";
@@ -17,7 +17,7 @@ const Article = () => {
   const [commentValue, setCommentValue] = useState("")
   const [userdata, setUserdata] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const area = useRef();
   useEffect(() => {
     instance(`/api/posts/${id}`)
       .then((res) => {
@@ -47,7 +47,6 @@ const Article = () => {
     }).then(res => setNewComment(res.data))
     .catch(err => console.log(err))
     
-
   }
 
   useEffect(() => {
@@ -59,6 +58,23 @@ const Article = () => {
         console.log(err);
       });
   }, [newComment])
+
+  const handleEditBtn = (id) => {
+    instance.put(`/api/comments/${id}`, {
+      description: commentValue,
+    }).then(res => {
+      setNewComment(res.data)
+    })
+    .catch(err => console.log(err))
+  } 
+
+  const handleDeleteBtn = (id) => {
+    instance.delete(`/api/comments/${id}`, {
+      description: commentValue,
+      post: id,
+    }).then(res => setNewComment(res.data))
+    .catch(err => console.log(err))
+  }
 
   console.log(allcomments);
 
@@ -82,7 +98,7 @@ const Article = () => {
         </div>
 
         <div className="article__comment-wrapper">
-          <textarea value={commentValue} onChange={e => setCommentValue(e.target.value)} cols="30" rows="10" className="article__comment"></textarea>
+          <textarea ref={area} value={commentValue} onChange={e => setCommentValue(e.target.value)} cols="30" rows="10" className="article__comment"></textarea>
           <Button text="Comment" />
         </div>
       </form>
@@ -96,6 +112,11 @@ const Article = () => {
                   {userdata && <h2>{userdata.firstname?.slice(0, 1)}</h2>}
                 </div>
                 <p>{comment.description}</p>
+
+                <div className="btns">
+                  <button onClick={() => handleEditBtn(comment._id)}>Edit</button>
+                  <button onClick={() => handleDeleteBtn(comment._id)}>Delete</button>
+                </div>
               </div>
             ))
           }
